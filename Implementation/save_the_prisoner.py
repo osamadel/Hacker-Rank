@@ -11,11 +11,10 @@ import sys
 
 # Complete the saveThePrisoner function below.
 def saveThePrisoner(n, m, s):
-    residual_sweets = m % n
-    if residual_sweets + s - 1 > n:
-        return residual_sweets + s - n - 1
-    else:
-        return residual_sweets + s - 1
+    sw = m + s - 1
+    bad = sw % n
+    bad = n if bad == 0 else bad
+    return bad
 
 if __name__ == '__main__':
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
